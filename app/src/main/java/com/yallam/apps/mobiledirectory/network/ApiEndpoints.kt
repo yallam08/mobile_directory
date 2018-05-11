@@ -1,5 +1,6 @@
 package com.yallam.apps.mobiledirectory.network
 
+import com.yallam.apps.mobiledirectory.data.model.MobileModel
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,6 +11,6 @@ import retrofit2.http.Query
 interface ApiEndpoints {
 
     @GET("getlatest/")
-    fun getLatestPhones(@Query("brand") brand: String? = null): Observable<List<String>>
+    fun getLatestMobiles(@Query("brand") brand: String? = null): Observable<List<MobileModel>>
 
 }

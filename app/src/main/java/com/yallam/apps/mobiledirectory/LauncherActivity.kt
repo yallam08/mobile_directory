@@ -14,7 +14,6 @@ class LauncherActivity : AppCompatActivity() {
         setContentView(R.layout.activity_launcher)
 
         Observable.timer(1, TimeUnit.SECONDS, AndroidSchedulers.mainThread())
-                .take(1)
                 .subscribe({
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
