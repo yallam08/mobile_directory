@@ -1,7 +1,7 @@
 package com.yallam.apps.mobiledirectory.di
 
 import com.squareup.moshi.Moshi
-import com.yallam.apps.mobiledirectory.network.ApiEndpoints
+import com.yallam.apps.mobiledirectory.data.remote.ApiEndpoints
 import com.yallam.apps.mobiledirectory.network.ApiTokenInterceptor
 import dagger.Module
 import dagger.Provides

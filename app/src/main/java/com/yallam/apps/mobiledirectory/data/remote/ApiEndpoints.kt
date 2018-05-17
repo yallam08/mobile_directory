@@ -1,4 +1,4 @@
-package com.yallam.apps.mobiledirectory.network
+package com.yallam.apps.mobiledirectory.data.remote
 
 import com.yallam.apps.mobiledirectory.data.model.MobileModel
 import io.reactivex.Observable

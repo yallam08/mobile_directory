@@ -6,7 +6,7 @@ import okhttp3.Response
 /**
  * Created by Yahia Allam on 09/05/2018
  *
- * Add the mandatory token query param to all requests
+ * Interceptor for dding the mandatory token query param
  */
 class ApiTokenInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {

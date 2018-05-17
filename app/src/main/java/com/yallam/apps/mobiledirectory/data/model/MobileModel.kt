@@ -1,11 +1,18 @@
 package com.yallam.apps.mobiledirectory.data.model
 
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.squareup.moshi.Json
+import java.io.Serializable
 
 /**
  * Created by Yahia Allam on 11/05/2018
  */
+@Entity(tableName = "mobile")
 data class MobileModel(
+        @PrimaryKey(autoGenerate = true)
+        val id: Int,
+
         @Json(name = "DeviceName")
         val deviceName: String,
 
@@ -29,5 +36,4 @@ data class MobileModel(
 
         @Json(name = "price")
         val price: String
-) {
-}
+): Serializable

@@ -1,21 +1,29 @@
 package com.yallam.apps.mobiledirectory.data
 
+import com.yallam.apps.mobiledirectory.data.local.MobileDao
 import com.yallam.apps.mobiledirectory.data.model.MobileModel
-import com.yallam.apps.mobiledirectory.network.ApiEndpoints
+import com.yallam.apps.mobiledirectory.data.remote.ApiEndpoints
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 /**
  * Created by Yahia Allam on 11/05/2018
  */
-class MobileRepository @Inject constructor(private val apiEndpoints: ApiEndpoints) {
+class MobileRepository @Inject constructor(
+        private val apiEndpoints: ApiEndpoints, private val mobileDao: MobileDao) {
 
+    //TODO: insert to db first then retrieve
     fun getMobiles(): Observable<List<MobileModel>> {
+        return getMobilesFromRemote()
+    }
+
+    private fun getMobilesFromRemote(): Observable<List<MobileModel>> {
         return apiEndpoints.getLatestMobiles()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext {
+                    it.forEach {
+                        mobileDao.insertMobile(it)
+                    }
+                }
 
     }
 
