@@ -1,7 +1,7 @@
 package com.yallam.apps.mobiledirectory.di
 
-import com.yallam.apps.mobiledirectory.MainActivity
 import com.yallam.apps.mobiledirectory.base.MDApplication
+import com.yallam.apps.mobiledirectory.vvm.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 

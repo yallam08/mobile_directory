@@ -14,26 +14,26 @@ data class MobileModel(
         val id: Int,
 
         @Json(name = "DeviceName")
-        val deviceName: String,
+        val deviceName: String?,
 
         @Json(name = "Brand")
-        val brand: String,
+        val brand: String?,
 
         @Json(name = "announced")
-        val announced: String,
+        val announced: String?,
 
         @Json(name = "os")
-        val os: String,
+        val os: String?,
 
         @Json(name = "internal")
-        val internalMemoryAndRam: String,
+        val internalMemoryAndRam: String?,
 
         @Json(name = "primary_")
-        val primaryCamera: String,
+        val primaryCamera: String?,
 
         @Json(name = "secondary")
-        val secondaryCamera: String,
+        val secondaryCamera: String?,
 
         @Json(name = "price")
-        val price: String
+        val price: String?
 ): Serializable

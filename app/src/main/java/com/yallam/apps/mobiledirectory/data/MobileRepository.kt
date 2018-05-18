@@ -10,11 +10,16 @@ import javax.inject.Inject
  * Created by Yahia Allam on 11/05/2018
  */
 class MobileRepository @Inject constructor(
-        private val apiEndpoints: ApiEndpoints, private val mobileDao: MobileDao) {
+        private val apiEndpoints: ApiEndpoints,
+        private val mobileDao: MobileDao
+) {
 
-    //TODO: insert to db first then retrieve
+    /**
+     * Retrieve from db after updating from remote. If not connected, get from db directly
+     */
     fun getMobiles(): Observable<List<MobileModel>> {
-        return getMobilesFromRemote()
+        //TODO: add connectivity check
+        return Observable.concatArrayEager(getMobilesFromRemote(), getMobilesFromDb())
     }
 
     private fun getMobilesFromRemote(): Observable<List<MobileModel>> {
@@ -24,7 +29,10 @@ class MobileRepository @Inject constructor(
                         mobileDao.insertMobile(it)
                     }
                 }
+    }
 
+    private fun getMobilesFromDb(): Observable<List<MobileModel>> {
+        return mobileDao.getMobiles().toObservable()
     }
 
 }

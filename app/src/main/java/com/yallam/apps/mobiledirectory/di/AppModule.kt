@@ -7,6 +7,8 @@ import com.yallam.apps.mobiledirectory.data.MobileRepository
 import com.yallam.apps.mobiledirectory.data.local.Database
 import com.yallam.apps.mobiledirectory.data.local.MobileDao
 import com.yallam.apps.mobiledirectory.data.remote.ApiEndpoints
+import com.yallam.apps.mobiledirectory.vvm.MainActivityViewModel
+import com.yallam.apps.mobiledirectory.vvm.MainActivityViewModelFactory
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -35,5 +37,9 @@ class AppModule(private val app: MDApplication) {
     @Provides
     fun provideMobileRepository(apiEndpoints: ApiEndpoints, mobileDao: MobileDao): MobileRepository
             = MobileRepository(apiEndpoints, mobileDao)
+
+    @Provides
+    fun provideMainActivityViewModelFactory(mainActivityViewModel: MainActivityViewModel)
+            : MainActivityViewModelFactory = MainActivityViewModelFactory(mainActivityViewModel)
 
 }

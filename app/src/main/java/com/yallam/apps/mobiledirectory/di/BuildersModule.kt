@@ -1,6 +1,6 @@
 package com.yallam.apps.mobiledirectory.di
 
-import com.yallam.apps.mobiledirectory.MainActivity
+import com.yallam.apps.mobiledirectory.vvm.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
