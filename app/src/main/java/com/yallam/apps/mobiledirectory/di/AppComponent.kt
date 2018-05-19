@@ -2,6 +2,7 @@ package com.yallam.apps.mobiledirectory.di
 
 import com.yallam.apps.mobiledirectory.base.MDApplication
 import com.yallam.apps.mobiledirectory.vvm.MainActivity
+import com.yallam.apps.mobiledirectory.vvm.mobileslist.MobilesListFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -15,4 +16,5 @@ import javax.inject.Singleton
 interface AppComponent {
     fun inject(app: MDApplication)
     fun inject(mainActivity: MainActivity)
+    fun inject(mobilesListFragment: MobilesListFragment)
 }

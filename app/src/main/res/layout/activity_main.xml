@@ -3,8 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".vvm.MainActivity">
 
-
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"/>
+    
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorPrimaryDark"
+        app:itemBackground="@color/colorPrimaryDark"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
+        app:menu="@menu/bottom_navigation"/>
 
 </android.support.constraint.ConstraintLayout>

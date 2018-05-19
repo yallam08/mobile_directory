@@ -7,11 +7,11 @@ import javax.inject.Inject
 /**
  * Created by Yahia Allam on 19/05/2018
  */
-class MainActivityViewModelFactory
-@Inject constructor(private val mainActivityViewModel: MainActivityViewModel): ViewModelProvider.Factory {
+class MobilesListViewModelFactory
+@Inject constructor(private val mobilesListViewModel: MobilesListViewModel): ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
-            return mainActivityViewModel as T
+        if (modelClass.isAssignableFrom(MobilesListViewModel::class.java)) {
+            return mobilesListViewModel as T
         } else {
             throw IllegalArgumentException("Unknown class!")
         }

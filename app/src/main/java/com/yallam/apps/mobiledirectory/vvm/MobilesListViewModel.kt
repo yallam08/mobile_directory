@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * Created by Yahia Allam on 18/05/2018
  */
-class MainActivityViewModel @Inject constructor(
+class MobilesListViewModel @Inject constructor(
         private val mobileRepository: MobileRepository
 ) : ViewModel() {
     val mobilesLiveData: MutableLiveData<List<MobileModel>> = MutableLiveData()
